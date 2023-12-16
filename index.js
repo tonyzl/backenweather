@@ -26,9 +26,7 @@ app.get("/api/:name", async (req, res) => {
   try {
     const name = req.params.name;
 
-    const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${name}&APPID=${API_KEY}`
-    );
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&APPID=${API_KEY}`);
     const data = response.data;
     console.log('200'+name);  
     return res.json(data);
